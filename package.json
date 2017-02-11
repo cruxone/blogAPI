@@ -1,0 +1,25 @@
+{
+  "name": "blogapi",
+  "version": "1.0.0",
+  "description": "a blog api that can GET/PUT data connected to a sqlite db",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cruxone/blogAPI.git"
+  },
+  "author": "cruxOne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cruxone/blogAPI/issues"
+  },
+  "homepage": "https://github.com/cruxone/blogAPI#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "sqlite3": "^3.1.8"
+  }
+}

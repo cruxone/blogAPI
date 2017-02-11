@@ -9,18 +9,31 @@ var PORT = 3000;
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    res.send('Blog API Root');
-    //console log to test connection
-    console.log('hit root')
+    console.log('Blog API Root hit');
 });
 
-// app.get('/posts', function (req, res) {
-//    db.posts.findAll().then(function(posts) {
-//        res.json(posts);
-//    }).then(function(e) {
-//        res.status(500).send();
-//    });
-// });
+//get all blog posts
+//need data to be returned in an array
+app.get('/posts', function (req, res) {
+    console.log('/post end point hit')
+    //array initialized to contain all posts
+    posts = []
+    db.serialize(function() {
+        //iterate through each post and append posts array with data
+        db.each("SELECT post_id AS id, title, body FROM posts", function(err, row) {
+            posts += [row.id + " : " + row.title + " : " + row.body]
+        }, function(err, row) {
+            //completion callback for the db each call, printing posts array
+            console.log(posts);
+        });
+    });
+});
+
+//put a blog post
+app.post('/post', function (req, res) {
+    console.log('/post end point hit');
+});
+
 
 db.serialize(function () {
     app.listen(PORT, function () {

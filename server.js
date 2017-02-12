@@ -9,10 +9,6 @@ var PORT = 3000;
 
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    console.log('Blog API Root hit');
-});
-
 //get all blog posts
 app.get('/posts', function (req, res) {
     console.log('/posts end point hit')

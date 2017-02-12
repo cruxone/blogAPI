@@ -7,8 +7,6 @@ var db = new sqlite3.Database('blog.db');
 var app = express();
 var PORT = 3000;
 
-//  TODO, clean up posts array, maybe make it array of post object
-
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
@@ -48,9 +46,6 @@ app.post('/post', function (req, res) {
         res.json(newPost);
     });
 });
-
-db.serialize(function () {
-    app.listen(PORT, function () {
-        console.log('connected to db, listening on port');
-    });
+app.listen(PORT, function () {
+    console.log('connected to db, listening on port');
 });

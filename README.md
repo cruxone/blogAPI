@@ -1,6 +1,6 @@
 #blogAPI
 ##How to deploy:
-#######Note: this example is on an ubuntu 16.4 machine, and it is running as a local vm.
+#######Note: this example is on an ubuntu 16.04 machine, and it is running as a local vm.
 I have the default port for the server set to 3000. Change this anytime in server.js or another means of networking.
 
 Dependencies:

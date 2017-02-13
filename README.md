@@ -1,6 +1,6 @@
 #blogAPI
 ##How to deploy:
-#######Note: this example is on an ubuntu 16.04 machine, and it is running as a local vm.
+#######Note: this example is on an ubuntu 16.04 machine, and it is running as a local vm. There are 3 rows in the database that are used for testing purposes, they will be returned with a get request.
 I have the default port for the server set to 3000. Change this anytime in server.js or another means of networking.
 
 Dependencies:
@@ -30,7 +30,9 @@ Dependencies:
 
 #######run server and check response:
     node server.js
+        output should say "connected to db, listening on port"
     On seperate terminal 'curl http://host:3000/posts'
+        if there is data within the database, it will be displayed
 
 #######start application with pm2:
     pm2 start server.js
@@ -40,4 +42,6 @@ Dependencies:
 
 #######To ensure the server is running properly:
     on machine: 'curl http://localhost:3000/posts'
+        if there is data within the database, it will be displayed
     on other machine: 'curl http://host:3000/posts'
+        if there is data within the database, it will be displayed

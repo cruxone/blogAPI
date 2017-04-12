@@ -43,5 +43,5 @@ app.post('/post', function (req, res) {
     });
 });
 app.listen(PORT, function () {
-    console.log('connected to db, listening on port');
+    console.log('listening on port');
 });
